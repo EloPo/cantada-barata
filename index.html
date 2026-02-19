@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quero ser toddynho seu 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    h1 {
+      color: #b30059;
+      font-size: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    img {
+      width: 250px;
+      z-index: 2;
+      animation: flutuar 3s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .coracao {
+      position: absolute;
+      color: rgba(255, 0, 100, 0.6);
+      font-size: 20px;
+      animation: cair linear infinite;
+      top: -10%;
+    }
+
+    @keyframes cair {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(120vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Quero ser toddynho seu 💕</h1>
+
+  <!-- Imagem do Toddynho com rosa -->
+  <img src="toddynho.png" alt="Toddynho com rosa">
+
+  <script>
+    function criarCoracao() {
+      const coracao = document.createElement("div");
+      coracao.classList.add("coracao");
+      coracao.innerHTML = "💖";
+      coracao.style.left = Math.random() * 100 + "vw";
+      coracao.style.animationDuration = (3 + Math.random() * 4) + "s";
+      coracao.style.fontSize = (16 + Math.random() * 20) + "px";
+
+      document.body.appendChild(coracao);
+
+      setTimeout(() => {
+        coracao.remove();
+      }, 7000);
+    }
+
+    setInterval(criarCoracao, 300);
+  </script>
+
+</body>
+</html>
